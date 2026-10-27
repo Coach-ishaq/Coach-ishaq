@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>المدرب إسحاق</title>
+<style>
+:root{--bg:#f5f5f7;--card:#fff;--tx:#1a1a1a;--mu:#666;--bd:#e2e2e6;--ac:#d62828;--ok:#1b8a3a;--no:#c1121f;--wb:#fff3cd;--wt:#664d03;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121214;--card:#1e1e22;--tx:#f0f0f0;--mu:#9a9a9a;--bd:#333;--ok:#3ddc6b;--no:#ff6b6b;--wb:#3a2f08;--wt:#ffe08a}}
+:root[data-theme="dark"]{--bg:#121214;--card:#1e1e22;--tx:#f0f0f0;--mu:#9a9a9a;--bd:#333;--ok:#3ddc6b;--no:#ff6b6b;--wb:#3a2f08;--wt:#ffe08a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;padding:12px;max-width:640px;margin-inline:auto}
+h1{font-size:20px;margin:6px 0 10px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:12px;margin-bottom:10px}
+input,select,button{font:inherit;padding:10px;border-radius:8px;border:1px solid var(--bd);background:var(--card);color:var(--tx);width:100%}
+button{cursor:pointer;width:auto}
+.pri{background:var(--ac);color:#fff;border:0;font-weight:600}
+.row{display:flex;gap:8px;margin-bottom:8px}
+.row>*{flex:1;min-width:0}
+.stats{display:flex;gap:8px}
+.stats div{flex:1;text-align:center;font-size:13px;color:var(--mu)}
+.stats b{display:block;font-size:20px;color:var(--tx)}
+.m{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.n{font-weight:600}.s{font-size:13px;color:var(--mu)}
+.ok{color:var(--ok);font-weight:600}.no{color:var(--no);font-weight:600}
+.acts{display:flex;gap:6px;margin-top:8px}
+.acts button{flex:1;padding:8px;font-size:14px}
+#toast{position:fixed;top:calc(env(safe-area-inset-top,0px) + 8px);left:12px;right:12px;background:var(--ok);color:#fff;padding:12px;border-radius:10px;text-align:center;font-weight:600;display:none;z-index:9}
+#alert{background:var(--wb);color:var(--wt);border-radius:12px;padding:12px;margin-bottom:10px;display:none}
+#alert b{display:block;margin-bottom:4px}
+.tabs{display:flex;gap:6px;margin-bottom:10px}
+.tabs button{flex:1;padding:8px;font-size:14px}
+.tabs .on{background:var(--ac);color:#fff;border-color:var(--ac)}
+html:root:root{--bg:#0b0b0d;--card:#17171b;--tx:#f4f4f5;--mu:#9b9ba3;--bd:#2a2a31;--ac:#e11d2e;--ok:#3ddc6b;--no:#ff5a5f;--wb:#2b2108;--wt:#ffd66b;--gd:#f5b301}
+body{background:radial-gradient(circle at 50% -10%,#3a0a10 0,var(--bg) 55%) fixed;background-color:var(--bg)}
+.coach{font-size:22px;font-weight:800;letter-spacing:.3px}
+.coach span{color:var(--gd)}
+.card{border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.stats b{color:var(--gd);font-size:22px}
+.pri{background:linear-gradient(135deg,#e11d2e,#b3121f);box-shadow:0 3px 10px rgba(225,29,46,.35)}
+.tabs .on{background:var(--gd);color:#111;border-color:var(--gd);font-weight:700}
+input:focus,select:focus{outline:2px solid var(--gd);border-color:var(--gd)}
+.n{font-size:16px}
+#lock{position:fixed;inset:0;background:var(--bg);z-index:20;display:flex;align-items:center;justify-content:center;padding:20px}
+.lbox{width:100%;max-width:320px;text-align:center;display:flex;flex-direction:column;gap:10px}
+.lbox input{text-align:center;font-size:20px;letter-spacing:6px}
+.hero2{position:relative;display:flex;justify-content:space-between;align-items:flex-end;overflow:hidden;border-radius:18px;background:radial-gradient(circle at 20% 35%,#8a1220 0,#1a0a0d 55%,#0b0b0d 100%);border:1px solid #4a1118;min-height:230px;margin-bottom:12px;box-shadow:0 8px 26px rgba(225,29,46,.28);animation:rise .7s ease both}
+.hero2:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 15% 20%,rgba(255,220,120,.35),transparent 45%);animation:fl 5s infinite;pointer-events:none}
+.hl{padding:14px;z-index:2;display:flex;flex-direction:column;gap:4px;align-self:stretch;justify-content:center}
+.lg{width:62px;height:62px;border-radius:50%;border:2px solid var(--gd);object-fit:cover;margin-bottom:4px}
+.hero2 .coach{font-size:26px;font-weight:800;line-height:1.1}
+.sc{font-size:12px;letter-spacing:3px;color:var(--gd);font-weight:700}
+.hero2 .sub{font-size:12px;color:#f3d9d9}
+.ct{color:#111;background:var(--gd);border-radius:20px;padding:5px 12px;font-weight:800;text-decoration:none;display:inline-block;width:fit-content;margin-top:4px;direction:ltr}
+.loc{font-size:11px;color:#e8c9c9}
+.ci{align-self:flex-end;flex:none}
+.coachimg{display:block;height:215px;width:auto;-webkit-mask-image:linear-gradient(to top,transparent 0,#000 14%),linear-gradient(to left,transparent 0,#000 18%);-webkit-mask-composite:source-in;mask-composite:intersect;mask-image:linear-gradient(to top,transparent 0,#000 14%),linear-gradient(to left,transparent 0,#000 18%);animation:flt 4.5s ease-in-out infinite}
+@keyframes flt{50%{transform:translateY(-6px)}}
+@keyframes fl{0%,88%,100%{opacity:.35}90%{opacity:1}93%{opacity:.4}96%{opacity:.9}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}}
+@media (prefers-reduced-motion:reduce){.hero2,.hero2:before,.coachimg{animation:none}}
+#pub{position:fixed;inset:0;background:radial-gradient(circle at 50% -10%,#3a0a10 0,var(--bg) 55%);background-color:var(--bg);z-index:19;overflow-y:auto;padding:12px;padding-top:calc(env(safe-area-inset-top,0px) + 12px)}
+.pbox{max-width:640px;margin:0 auto}
+.fl{font-size:13px;color:var(--mu);margin:2px 0 4px}
+#toast{z-index:30}
+</style>
+</head>
+<body>
+<div id="lock" style="display:none"><div class="lbox"><div style="font-size:42px">🔒</div><div id="lt" class="n"></div><input id="pin" type="password" inputmode="numeric" placeholder="••••" autocomplete="off"><button class="pri" style="width:100%" onclick="unlock()">دخول</button><div id="lm" class="no"></div><button onclick="showPub()">رجوع</button></div></div>
+<div id="pub"><div class="pbox"><div id="pubhero"></div>
+<div class="card"><div class="n" style="margin-bottom:8px">📝 التسجيل مع المدرب إسحاق</div>
+<div class="row"><input id="pfn" placeholder="الاسم"><input id="pln" placeholder="اللقب"></div>
+<div class="row"><input id="pph" type="tel" inputmode="tel" placeholder="رقم الهاتف"></div>
+<div class="fl">تاريخ الميلاد والرياضة</div>
+<div class="row"><input id="pbd" type="date" aria-label="تاريخ الميلاد"><select id="psp"><option>بوكس</option><option>كيك بوكسينغ</option><option>جوجيتسو</option><option>MMA</option><option>مواي تاي</option><option>لياقة بدنية</option></select></div>
+<button class="pri" style="width:100%" onclick="sendReg()">📲 إرسال التسجيل عبر واتساب</button></div>
+</div></div>
+<div id="toast"></div>
+<div class="hero2"><div class="hl"><img class="lg" alt="Team Ishaq" src="logo.jpg"><div class="coach">المدرب <span>إسحاق</span></div><div class="sc">TEAM ISHAQ</div><div class="sub">موي تاي • كيك بوكسينغ • MMA</div><a class="ct" href="tel:0656718740">📞 0656718740</a><div class="loc">📍 المركب الرياضي 24 فبراير - لاسيسيس، ورقلة</div></div><div class="ci"><img class="coachimg" alt="المدرب إسحاق" src="coach.jpg"></div></div>
+<div id="alert"></div>
+
+<div class="card stats">
+  <div><b id="sTot">0</b>متدرب</div>
+  <div><b id="sAct">0</b>خالصين</div>
+  <div><b id="sExp">0</b>تم شهرهم</div>
+  <div><b id="sSum">0</b>مداخيل الشهر</div>
+</div>
+
+<div class="card">
+  <div class="row"><input id="fn" placeholder="الاسم"><input id="ln" placeholder="اللقب"></div>
+  <div class="row"><input id="ph" type="tel" inputmode="tel" placeholder="رقم الهاتف (واتساب)"></div>
+  <div class="row">
+    <input id="bd" type="date" aria-label="تاريخ الميلاد">
+    <select id="sp"><option>بوكس</option><option>كيك بوكسينغ</option><option>جوجيتسو</option><option>MMA</option><option>مواي تاي</option><option>لياقة بدنية</option></select>
+  </div>
+  <button class="pri" style="width:100%" onclick="addM()">+ تسجيل متدرب</button>
+</div>
+
+<div class="tabs">
+  <button id="t0" class="on" onclick="tab('all')">الكل</button>
+  <button id="t1" onclick="tab('exp')">تم شهرهم</button>
+  <button id="t2" onclick="tab('act')">خالصين</button>
+  <button id="t3" onclick="tab('log')">الإشعارات</button>
+</div>
+<input id="q" placeholder="🔍 بحث بالاسم" oninput="render()" style="margin-bottom:8px">
+<div id="list"></div>
+<button style="width:100%;margin-top:8px" onclick="backup()">💾 نسخة احتياطية</button>
+
+<script>
+var D={m:[],log:[]},F='all';
+try{var s=localStorage.getItem('gymdata2');if(s)D=JSON.parse(s)}catch(e){}
+function save(){try{localStorage.setItem('gymdata2',JSON.stringify(D))}catch(e){}}
+function iso(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+function today(){return iso(new Date())}
+function addMonth(s){var d=new Date(s+'T00:00:00'),day=d.getDate();d.setDate(1);d.setMonth(d.getMonth()+1);var last=new Date(d.getFullYear(),d.getMonth()+1,0).getDate();d.setDate(Math.min(day,last));return iso(d)}
+function diff(a,b){return Math.round((new Date(a+'T00:00:00')-new Date(b+'T00:00:00'))/86400000)}
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function age(b){if(!b)return'';return Math.floor((Date.now()-new Date(b))/31557600000)+' سنة'}
+function toast(t){var e=document.getElementById('toast');e.textContent=t;e.style.display='block';setTimeout(function(){e.style.display='none'},4000)}
+function expired(m){return !m.due||m.due<=today()}
+function tab(f){F=f;['all','exp','act','log'].forEach(function(k,i){document.getElementById('t'+i).className=k==f?'on':''});render()}
+function addM(){
+  var fn=document.getElementById('fn').value.trim(),ln=document.getElementById('ln').value.trim();
+  if(!fn||!ln){toast('كتب الاسم واللقب');return}
+  D.m.push({id:Date.now(),fn:fn,ln:ln,ph:document.getElementById('ph').value.trim(),bd:document.getElementById('bd').value,sp:document.getElementById('sp').value,due:'',hist:[],att:[]});
+  ['fn','ln','bd','ph'].forEach(function(i){document.getElementById(i).value=''});
+  save();render()
+}
+function pay(id){
+  var m=D.m.find(function(x){return x.id==id});
+  var v=prompt('المبلغ المدفوع (دج) - '+m.fn+' '+m.ln);
+  if(v===null)return;v=parseFloat(v);
+  if(!(v>0)){toast('مبلغ غير صحيح');return}
+  var t=today(),start=(m.due&&m.due>t)?m.due:t;
+  m.hist.push({d:t,a:v});m.due=addMonth(start);m.notified='';
+  var msg='✅ '+m.fn+' '+m.ln+' خلص ('+v+' دج). شهرو ينتهي يوم '+m.due;
+  D.log.unshift({t:new Date().toLocaleString('ar-DZ'),msg:msg});
+  save();toast(msg);render()
+}
+function att(id){
+  var m=D.m.find(function(x){return x.id==id}),d=today();
+  if(m.att.indexOf(d)>-1){toast('مسجل حاضر اليوم من قبل');return}
+  m.att.push(d);save();toast('تسجل حضور '+m.fn);render()
+}
+function wa(id){var m=D.m.find(function(x){return x.id==id}),p=m.ph.replace(/\D/g,'');if(p[0]=='0')p='213'+p.slice(1);
+var t=expired(m)?'السلام عليكم '+m.fn+'، شهرك في فريق إسحاق تم. جدد الاشتراك باش تكمل التدريب 💪':'السلام عليكم '+m.fn+' 👋';
+window.open('https://wa.me/'+p+'?text='+encodeURIComponent(t),'_blank')}
+function del(id){if(confirm('مسح هاد المتدرب؟')){D.m=D.m.filter(function(x){return x.id!=id});save();render()}}
+function backup(){
+  var t=JSON.stringify(D);
+  if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){toast('تنسخت البيانات، لصقها في ملاحظات')},function(){prompt('انسخ:',t)})}else prompt('انسخ:',t)
+}
+function check(){
+  var ch=false,names=[];
+  D.m.forEach(function(m){
+    if(m.due&&m.due<=today()){
+      names.push(m.fn+' '+m.ln);
+      if(m.notified!==m.due){m.notified=m.due;ch=true;
+        D.log.unshift({t:new Date().toLocaleString('ar-DZ'),msg:'⏰ '+m.fn+' '+m.ln+' تم شهرو (انتهى '+m.due+')، لازم يعاود يخلص'})}
+    }
+  });
+  if(ch)save();
+  var a=document.getElementById('alert');
+  if(names.length){a.style.display='block';a.innerHTML='<b>⏰ تم شهرهم ولازم يعاودو يخلصو ('+names.length+')</b>'+esc(names.join('، '))}
+  else a.style.display='none'
+}
+function render(){
+  check();
+  var q=document.getElementById('q').value.trim(),mo=today().slice(0,7),sum=0,act=0,t=today();
+  D.m.forEach(function(m){if(!expired(m))act++;m.hist.forEach(function(h){if(h.d.slice(0,7)==mo)sum+=h.a})});
+  document.getElementById('sTot').textContent=D.m.length;
+  document.getElementById('sAct').textContent=act;
+  document.getElementById('sExp').textContent=D.m.length-act;
+  document.getElementById('sSum').textContent=sum;
+  var h='';
+  if(F=='log'){
+    h=D.log.length?D.log.map(function(l){return '<div class="card"><div>'+esc(l.msg)+'</div><div class="s">'+esc(l.t)+'</div></div>'}).join(''):'<div class="card s">ما كاين حتى إشعار</div>';
+    document.getElementById('list').innerHTML=h;return
+  }
+  D.m.filter(function(m){
+    var e=expired(m);
+    return (F=='all'||(F=='exp'&&e)||(F=='act'&&!e))&&(!q||(m.fn+' '+m.ln).indexOf(q)>-1)
+  }).forEach(function(m){
+    var e=expired(m),n=m.att.filter(function(d){return d.slice(0,7)==t.slice(0,7)}).length,st;
+    if(!m.due)st='<div class="no">ما خلصش</div>';
+    else if(e)st='<div class="no">تم شهرو<br><span class="s">منذ '+diff(t,m.due)+' يوم</span></div>';
+    else st='<div class="ok">خالص<br><span class="s">باقي '+diff(m.due,t)+' يوم</span></div>';
+    h+='<div class="card"><div class="m"><div><div class="n">'+esc(m.fn)+' '+esc(m.ln)+'</div><div class="s">'+esc(m.sp)+(m.bd?' • '+age(m.bd):'')+' • حضور الشهر: '+n+'</div></div>'+st+'</div>'+
+    '<div class="acts"><button onclick="att('+m.id+')">'+(m.att.indexOf(t)>-1?'✔ حاضر':'حاضر اليوم')+'</button>'+
+    '<button class="pri" onclick="pay('+m.id+')">💰 '+(e?'تجديد':'دفع')+'</button>'+
+    (m.ph?'<button onclick="wa('+m.id+')">📲</button>':'')+'<button onclick="del('+m.id+')">🗑</button></div></div>'
+  });
+  document.getElementById('list').innerHTML=h||'<div class="card s">ما كاين حتى متدرب</div>'
+}
+function hs(s){var x=5381;for(var i=0;i<s.length;i++)x=((x<<5)+x+s.charCodeAt(i))|0;return String(x)}
+function pinGet(){try{return localStorage.getItem('gympin')}catch(e){return null}}
+function unlock(){
+  var v=document.getElementById('pin').value,lm=document.getElementById('lm'),p=pinGet();
+  if(!p){
+    if(v.length<4){lm.textContent='الكود 4 أرقام على الأقل';return}
+    try{localStorage.setItem('gympin',hs(v))}catch(e){}
+  }else if(hs(v)!==p){lm.textContent='الكود غلط';return}
+  document.getElementById('lock').style.display='none';document.getElementById('pin').value=''
+}
+document.getElementById('lt').textContent=pinGet()?'المدرب إسحاق، دخل الكود السري':'درتي كود سري جديد (4 أرقام أو أكثر)';
+document.getElementById('pin').addEventListener('keydown',function(e){if(e.key==='Enter')unlock()});
+function showLock(){document.getElementById('pub').style.display='none';document.getElementById('lock').style.display='flex'}
+function showPub(){document.getElementById('lock').style.display='none';document.getElementById('pub').style.display='block'}
+function sendReg(){
+  var g=function(i){return document.getElementById(i).value.trim()};
+  if(!g('pfn')||!g('pln')||!g('pph')){toast('عمر الاسم واللقب ورقم الهاتف');return}
+  var t='تسجيل جديد في فريق إسحاق 🥊\nالاسم: '+g('pfn')+'\nاللقب: '+g('pln')+'\nتاريخ الميلاد: '+(g('pbd')||'-')+'\nالرياضة: '+g('psp')+'\nالهاتف: '+g('pph');
+  window.open('https://wa.me/213656718740?text='+encodeURIComponent(t),'_blank')
+}
+document.getElementById('pubhero').innerHTML=document.querySelector('.hero2').outerHTML;
+var taps=0,tt,pl=document.querySelector('#pubhero .lg');
+pl.addEventListener('click',function(){taps++;clearTimeout(tt);tt=setTimeout(function(){taps=0},1500);if(taps>=5){taps=0;showLock()}});
+function chk(){if(location.hash==='#coach')showLock()}
+window.addEventListener('hashchange',chk);chk();
+render();
+</script>
+</body>
+  </html>
